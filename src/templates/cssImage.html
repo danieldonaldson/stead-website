@@ -1,0 +1,7 @@
+{% macro cssPicture(name, image, extension) %}
+<style>
+    #{{ name }} {
+      background-image: url("assets/img/{{ image }}.{{ extension }}");
+    }
+  </style>
+{% endmacro %}

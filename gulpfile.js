@@ -1,3 +1,9 @@
+import {stream as critical} from 'critical';
+
+// Define "require"
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
 const gulp = require('gulp'),
     nunjucks = require('gulp-nunjucks'),
     purgecss = require('gulp-css-purge'),
@@ -11,16 +17,15 @@ const gulp = require('gulp'),
     sitemap = require('gulp-sitemap'),
     newer = require('gulp-newer'),
     cleanCSS = require('gulp-clean-css'),
-    responsive = require('gulp-responsive'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('sass')),
     log = require('fancy-log'),
-    critical = require('critical'),
     replace = require('gulp-replace'),
     debug = require('gulp-debug');
 
+var exports = {};
 
-const srcFolder = 'v2',
-    destFolder = 'dist',
+const srcFolder = 'src',
+    destFolder = 'dist-stead',
     tempFolder = 'tmp',
     currentUrl = 'https://stead.africa';
 
@@ -72,7 +77,7 @@ function compressAll(cb) {
             threshold: 1024,
             skipGrowingFiles: true
         }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist-stead'));
 };
 
 function hashCSSJS(cb) {
@@ -86,7 +91,7 @@ function hashCSSJS(cb) {
 function updateReferences(cb) {
     return gulp.src(tempFolder + '/rebasedcss/*.html')
         .pipe(references(tempFolder + '/asset-manifest.json')) // Replace file paths in index.html according to the manifest
-        .pipe(gulp.dest('dist/.'));
+        .pipe(gulp.dest('dist-stead/.'));
 };
 
 function uglyJS(cb) {
@@ -121,7 +126,7 @@ function gsitemap(cb) {
         .pipe(sitemap({
             siteUrl: currentUrl
         }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist-stead'));
 };
 
 gulp.task('watch', function () {
@@ -131,289 +136,13 @@ gulp.task('watch', function () {
     // gulp.watch(destFolder + '/assets/img/*.png', gulp.series('webp'));
 });
 
-function webpunresponsive(cb) {
-    return gulp.src([srcFolder + '/assets/img/nuk-pro-*.{jpg,png}', srcFolder + '/assets/img/{fav,apple-}icon*.{jpg,png}', srcFolder + '/assets/img/blurred-image-1.*'])
-        .pipe(newer(destFolder + '/assets/img-responsive'))
-        .pipe(responsive({
-            '*.jpg': [{
-                    rename: {
-                        extname: '.webp'
-                    },
-                },
-                {
-                    rename: {
-                        extname: '.jpg'
-                    }
-                }
-            ],
-            '*.png': [{
-                    rename: {
-                        extname: '.webp'
-                    }
-                },
-                {
-                    rename: {
-                        extname: '.png'
-                    }
-                }
-            ]
-        }, {
-            errorOnUnusedConfig: false
-        }))
-        .pipe(gulp.dest(destFolder + '/assets/img'));
-}
-
-function webpresponsive(cb) {
-    return gulp.src(['./assets/img/*.{jpg,png}', '!./assets/img/*favicon*.{jpg,png}'])
-        .pipe(responsive({
-            '*.jpg': [
-                //originals
-                {
-                    width: 60,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-tiny',
-                        extname: '.jpg'
-                    }
-                },
-                {
-                    width: 120,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-extrasmall',
-                        extname: '.jpg'
-                    }
-                },
-                {
-                    width: 240,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-small',
-                        extname: '.jpg'
-                    }
-                },
-                {
-                    width: 480,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-med',
-                        extname: '.jpg'
-                    }
-                },
-                {
-                    width: 1024,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-large',
-                        extname: '.jpg'
-                    }
-                },
-                {
-                    width: 2048,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-extralarge',
-                        extname: '.jpg'
-                    }
-                },
-                {
-                    width: 4096,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-huge',
-                        extname: '.jpg'
-                    }
-                },
-                //Webps
-                {
-                    width: 60,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-tiny',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 120,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-extrasmall',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 240,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-small',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 480,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-med',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 1024,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-large',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 2048,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-extralarge',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 4096,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-huge',
-                        extname: '.webp'
-                    }
-                }
-            ],
-            '*.png': [
-                //originals
-                {
-                    width: 60,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-tiny',
-                        extname: '.png'
-                    }
-                },
-                {
-                    width: 120,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-extrasmall',
-                        extname: '.png'
-                    }
-                },
-                {
-                    width: 240,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-small',
-                        extname: '.png'
-                    }
-                },
-                {
-                    width: 480,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-med',
-                        extname: '.png'
-                    }
-                },
-                {
-                    width: 1024,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-large',
-                        extname: '.png'
-                    }
-                },
-                {
-                    width: 2048,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-extralarge',
-                        extname: '.png'
-                    }
-                },
-                {
-                    width: 4096,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-huge',
-                        extname: '.png'
-                    }
-                },
-                //Webps
-                {
-                    width: 60,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-tiny',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 120,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-extrasmall',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 240,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-small',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 480,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-med',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 1024,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-large',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 2048,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-extralarge',
-                        extname: '.webp'
-                    }
-                },
-                {
-                    width: 4096,
-                    withoutEnlargement: false,
-                    rename: {
-                        suffix: '-huge',
-                        extname: '.webp'
-                    }
-                }
-            ],
-
-        }, {
-            errorOnUnusedConfig: false,
-            errorOnEnlargement: false
-        }))
-        .pipe(gulp.dest(destFolder + '/assets/img-responsive'))
-}
-
 // Generate & Inline Critical-path CSS
 function gulpcritical(cb) {
     return gulp.src(tempFolder + '/nunjuckshtml/*.html')
-        .pipe(critical.stream({
-            base: 'dist/',
+        .pipe(critical({
+            base: 'dist-stead/',
             //rebase: './dist',
             inline: true,
-            minify: true,
             css: [
                 tempFolder + '/assets/css/bootstrap.min.css',
                 tempFolder + '/assets/css/font-awesome.min.css',
@@ -468,14 +197,14 @@ function gulpcopydev(cb) {
 
 // exports.buildall = series(cleanTemp, buildhtml, gulppurgecss, uglyJS, hashCSSJS, updateReferences, gsitemap,compressAll);
 
-exports.builddev = gulp.series(cleanall, cleanTemp, buildhtml, gulpsass, gulpcopydev, gulpcopyBS, gulpcopyStatic);
-exports.buildall = gulp.series(cleanall, cleanTemp, buildhtml, gulpsass, gulppurgecss, gulpcopyBS, gulpCleanCss, uglyJS, gulpcritical, rebaseURLs, hashCSSJS, updateReferences, gsitemap, compressAll, gulpcopyStatic);
-exports.buildhtml = buildhtml;
-exports.cleanall = cleanall;
-exports.gulpcritical = gulpcritical;
-exports.webpres = webpresponsive;
-exports.webpun = webpunresponsive;
-exports.copystatic = gulpcopyStatic;
+// exports.builddev = gulp.series(cleanall, cleanTemp, buildhtml, gulpsass, gulpcopydev, gulpcopyBS, gulpcopyStatic);
+gulp.task("buildall", 
+    gulp.series(cleanall, cleanTemp, buildhtml, gulpsass, gulppurgecss, gulpcopyBS, gulpCleanCss, uglyJS, gulpcritical, rebaseURLs, hashCSSJS, updateReferences, gsitemap, compressAll, gulpcopyStatic)
+);
+// exports.buildhtml = buildhtml;
+// exports.cleanall = cleanall;
+// exports.gulpcritical = gulpcritical;
+// exports.copystatic = gulpcopyStatic;
 
 // exports.minify = minify;
 // exports.nunj = nunj;
