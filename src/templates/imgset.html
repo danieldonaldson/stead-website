@@ -1,205 +1,27 @@
 {% macro picturePercent(name, extension, percentWidth) %}
 <picture>
-  <!-- webp images -->
-  <!-- desktop 4x -->
-  <source type="image/webp" srcset="assets/img-responsive/{{ name }}-huge.webp"
-    media="(min-width: {{ 2049 * 1/percentWidth }}px)" />
-  <!-- desktop 2x -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-extralarge.webp, assets/img-responsive/{{ name }}-huge.webp 2x"
-    media="(min-width: {{ 1025 * 1/percentWidth }}px)" />
-  <!-- desktop 1x -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-large.webp, assets/img-responsive/{{ name }}-extralarge.webp 2x"
-    media="(min-width: {{ 481 * 1/percentWidth }}px)" />
-  <!-- width 400-1000 -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-large.webp, assets/img-responsive/{{ name }}-extralarge.webp 2x"
-    media="(min-width: {{ 241 * 1/percentWidth }}px)" />
-  <!-- width 200-400 -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-med.webp, assets/img-responsive/{{ name }}-large.webp 2x"
-    media="(min-width: {{ 121 * 1/percentWidth }}px)" />
-  <!-- width 60 - 200 -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-small.webp, assets/img-responsive/{{ name }}-med.webp 2x"
-    media="(min-width: {{ 60 * 1/percentWidth }}px)" />
-  <!-- default, no 2x -->
-  <source type="image/webp" srcset="assets/img-responsive/{{ name }}-small.webp" />
-  <!-- original images -->
-  <!-- desktop 4x -->
-  <source type="image/{{ extension }}" srcset="assets/img-responsive/{{ name }}-huge.{{ extension }}"
-    media="(min-width: {{ 2049 * 1/percentWidth }}px)" />
-  <!-- desktop 2x -->
   <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-extralarge.{{ extension }}, assets/img-responsive/{{ name }}-huge.{{ extension }} 2x"
-    media="(min-width: {{ 1025 * 1/percentWidth }}px)" />
-  <!-- desktop 1x -->
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-large.{{ extension }}, assets/img-responsive/{{ name }}-extralarge.{{ extension }} 2x"
-    media="(min-width: {{ 481 * 1/percentWidth }}px)" />
-  <!-- width 400-1000 -->
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-large.{{ extension }}, assets/img-responsive/{{ name }}-extralarge.{{ extension }} 2x"
-    media="(min-width: {{ 241 * 1/percentWidth }}px)" />
-  <!-- width 200-400 -->
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-med.{{ extension }}, assets/img-responsive/{{ name }}-large.{{ extension }} 2x"
-    media="(min-width: {{ 121 * 1/percentWidth }}px)" />
-  <!-- width 60 - 200 -->
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-small.{{ extension }}, assets/img-responsive/{{ name }}-med.{{ extension }} 2x"
-    media="(min-width: {{ 60 * 1/percentWidth }}px)" />
-  <!-- default, no 2x -->
-  <source type="image/{{ extension }}" srcset="assets/img-responsive/{{ name }}-small.{{ extension }}" />
+    srcset="assets/img-responsive/{{ name }}.{{ extension }}" />
   <!-- fallback -->
-  <img src="assets/img-responsive/{{ name }}-extralarge.{{ extension }}" alt="{{ name }}" />
+  <img src="assets/img-responsive/{{ name }}.{{ extension }}" alt="{{ name }}" />
 </picture>
 {% endmacro %}
 
 {% macro pictureFixed(name, extension, width) %}
 <picture>
-  {% if width >  2048 %}
-  <source type="image/webp" srcset="assets/img-responsive/{{ name }}-huge.webp" />
-  <source type="image/{{ extension }}" srcset="assets/img-responsive/{{ name }}-huge.{{ extension }}" />
-  {% elif width >  1024 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-extralarge.webp, assets/img-responsive/{{ name }}-huge.webp 2x" />
   <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-extralarge.{{ extension }}, assets/img-responsive/{{ name }}-huge.{{ extension }} 2x" />
-  {% elif width >  480 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-large.webp, assets/img-responsive/{{ name }}-extralarge.webp 2x" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-large.{{ extension }}, assets/img-responsive/{{ name }}-extralarge.{{ extension }} 2x" />
-  {% elif width >  240 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-med.webp, assets/img-responsive/{{ name }}-large.webp 2x" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-med.{{ extension }}, assets/img-responsive/{{ name }}-large.{{ extension }} 2x" />
-  {% elif width >  120 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-small.webp, assets/img-responsive/{{ name }}-med.webp 2x" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-small.{{ extension }}, assets/img-responsive/{{ name }}-med.{{ extension }} 2x" />
-  {% elif width >  60 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-extrasmall.webp, assets/img-responsive/{{ name }}-small.webp 2x" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-extrasmall.{{ extension }}, assets/img-responsive/{{ name }}-small.{{ extension }} 2x" />
-  {% else %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-tiny.webp, assets/img-responsive/{{ name }}-extrasmall.webp 2x" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-tiny.{{ extension }}, assets/img-responsive/{{ name }}-extrasmall.{{ extension }} 2x" />
-  {% endif %}
+    srcset="assets/img-responsive/{{ name }}.{{ extension }}, assets/img-responsive/{{ name }}.{{ extension }}" />
   <!-- fallback -->
-  <img src="assets/img-responsive/{{ name }}-extralarge.{{ extension }}" />
+  <img src="assets/img-responsive/{{ name }}.{{ extension }}" />
 </picture>
 {% endmacro %}
 
 {% macro pictureFixedthenPercent(name, extension, fixedWidth, percentWidth) %}
 <picture>
-  {% if fixedWidth >  2048 %}
-  <source type="image/webp" srcset="assets/img-responsive/{{ name }}-huge.webp" media="(min-width: 768px)" />
-  <source type="image/{{ extension }}" srcset="assets/img-responsive/{{ name }}-huge.{{ extension }}"
-    media="(min-width: 768px)" />
-  {% elif fixedWidth >  1024 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-extralarge.webp, assets/img-responsive/{{ name }}-huge.webp 2x"
-    media="(min-width: 768px)" />
   <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-extralarge.{{ extension }}, assets/img-responsive/{{ name }}-huge.{{ extension }} 2x"
-    media="(min-width: 768px)" />
-  {% elif fixedWidth >  480 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-large.webp, assets/img-responsive/{{ name }}-extralarge.webp 2x"
-    media="(min-width: 768px)" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-large.{{ extension }}, assets/img-responsive/{{ name }}-extralarge.{{ extension }} 2x"
-    media="(min-width: 768px)" />
-  {% elif fixedWidth >  240 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-med.webp, assets/img-responsive/{{ name }}-large.webp 2x"
-    media="(min-width: 768px)" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-med.{{ extension }}, assets/img-responsive/{{ name }}-large.{{ extension }} 2x"
-    media="(min-width: 768px)" />
-  {% elif fixedWidth >  120 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-small.webp, assets/img-responsive/{{ name }}-med.webp 2x"
-    media="(min-width: 768px)" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-small.{{ extension }}, assets/img-responsive/{{ name }}-med.{{ extension }} 2x"
-    media="(min-width: 768px)" />
-  {% elif fixedWidth >  60 %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-extrasmall.webp, assets/img-responsive/{{ name }}-small.webp 2x"
-    media="(min-width: 768px)" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-extrasmall.{{ extension }}, assets/img-responsive/{{ name }}-small.{{ extension }} 2x"
-    media="(min-width: 768px)" />
-  {% else %}
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-tiny.webp, assets/img-responsive/{{ name }}-extrasmall.webp 2x"
-    media="(min-width: 768px)" />
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-tiny.{{ extension }},assets/img-responsive/{{ name }}-extrasmall.{{ extension }} 2x"
-    media="(min-width: 768px)" />
-  {% endif %}
-  <!-- webp images -->
-  <!-- desktop 4x -->
-  <source type="image/webp" srcset="assets/img-responsive/{{ name }}-huge.webp"
-    media="(min-width: {{ 2049 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- desktop 2x -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-extralarge.webp, assets/img-responsive/{{ name }}-huge.webp 2x"
-    media="(min-width: {{ 1025 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- desktop 1x -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-large.webp, assets/img-responsive/{{ name }}-extralarge.webp 2x"
-    media="(min-width: {{ 481 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- width 400-1000 -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-large.webp, assets/img-responsive/{{ name }}-extralarge.webp 2x"
-    media="(min-width: {{ 241 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- width 200-400 -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-med.webp, assets/img-responsive/{{ name }}-large.webp 2x"
-    media="(min-width: {{ 121 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- width 60 - 200 -->
-  <source type="image/webp"
-    srcset="assets/img-responsive/{{ name }}-small.webp, assets/img-responsive/{{ name }}-med.webp 2x"
-    media="(min-width: {{ 60 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- default, no 2x -->
-  <source type="image/webp" srcset="assets/img-responsive/{{ name }}-small.webp" />
-  <!-- original images -->
-  <!-- desktop 4x -->
-  <source type="image/{{ extension }}" srcset="assets/img-responsive/{{ name }}-huge.{{ extension }}"
-    media="(min-width: {{ 2049 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- desktop 2x -->
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-extralarge.{{ extension }}, assets/img-responsive/{{ name }}-huge.{{ extension }} 2x"
-    media="(min-width: {{ 1025 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- desktop 1x -->
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-large.{{ extension }}, assets/img-responsive/{{ name }}-extralarge.{{ extension }} 2x"
-    media="(min-width: {{ 481 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- width 400-1000 -->
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-large.{{ extension }}, assets/img-responsive/{{ name }}-extralarge.{{ extension }} 2x"
-    media="(min-width: {{ 241 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- width 200-400 -->
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-med.{{ extension }}, assets/img-responsive/{{ name }}-large.{{ extension }} 2x"
-    media="(min-width: {{ 121 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- width 60 - 200 -->
-  <source type="image/{{ extension }}"
-    srcset="assets/img-responsive/{{ name }}-small.{{ extension }}, assets/img-responsive/{{ name }}-med.{{ extension }} 2x"
-    media="(min-width: {{ 60 * 1/percentWidth }}px, max-width: 768px)" />
-  <!-- default, no 2x -->
-  <source type="image/{{ extension }}" srcset="assets/img-responsive/{{ name }}-small.{{ extension }}" />
+    srcset="assets/img-responsive/{{ name }}.{{ extension }}" />
   <!-- fallback -->
-  <img src="assets/img-responsive/{{ name }}-extralarge.{{ extension }}" alt="{{ name }}" />
+  <img src="assets/img-responsive/{{ name }}.{{ extension }}"
+    alt="{{ name }}" />
 </picture>
 {% endmacro %}

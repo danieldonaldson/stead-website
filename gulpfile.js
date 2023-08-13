@@ -198,7 +198,7 @@ function gulpcopydev(cb) {
 // exports.buildall = series(cleanTemp, buildhtml, gulppurgecss, uglyJS, hashCSSJS, updateReferences, gsitemap,compressAll);
 
 // exports.builddev = gulp.series(cleanall, cleanTemp, buildhtml, gulpsass, gulpcopydev, gulpcopyBS, gulpcopyStatic);
-gulp.task("buildall", 
+gulp.task("build", 
     gulp.series(cleanall, cleanTemp, buildhtml, gulpsass, gulppurgecss, gulpcopyBS, gulpCleanCss, uglyJS, gulpcritical, rebaseURLs, hashCSSJS, updateReferences, gsitemap, compressAll, gulpcopyStatic)
 );
 // exports.buildhtml = buildhtml;
