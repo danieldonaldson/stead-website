@@ -28,7 +28,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY_STAGING }}
           passphrase: ${{ secrets.PASSPHRASE_STAGING }}
           port: 88
-          source: dist/
+          source: dist-stead/
           target: ~/
 
       - name: SSH into server and deploy
@@ -40,18 +40,18 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE_STAGING }}
           script: |
             # Copy the contents of dist/ to /var/www/
-            sudo cp -r ~/dist/ /var/www/
+            sudo cp -r ~/dist-stead/ /var/www/
 
             # Copy permissions from html/ to the new files in /var/www/
-            sudo cp -rp /var/www/html/ /var/www/dist/
+            sudo cp -rp /var/www/html/ /var/www/dist-stead/
 
             # Delete the old html directory
             sudo rm -r /var/www/html
 
             # Rename dist/ to html/
-            sudo mv /var/www/dist /var/www/html
+            sudo mv /var/www/dist-stead /var/www/html
 
             # Delete the old .zip file and unzipped directory
-            rm -r ~/dist
+            rm -r ~/dist-stead
 
           port: 88
