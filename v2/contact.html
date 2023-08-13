@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- PAGE HEADER -->
+
+<head>
+    {% import "templates/head.html" as head %}
+    {% import "templates/cssImage.html" as cssImage %}
+
+    {{ head.header("stead. Home","stead. digital innovation") }}
+    <meta property="og:url" content="https://stead.africa/contact.html" />
+    <!-- <meta property="og:image"
+      content="https://silience.co.za/assets/img-responsive/helloquence-5fNmWej4tAA-unsplash-small.jpg" />
+    <meta name="twitter:image:src"
+      content="https://silience.co.za/assets/img-responsive/helloquence-5fNmWej4tAA-unsplash-small.jpg"/> -->
+    {{ cssImage.cssPicture("headerImage","john-o-nolan-rqrv0bbzMLg-unsplash","jpg") }}
+    <script>
+        Modernizr.on('webp', function (result) {
+            if (!result) {
+                document.getElementById("headerImage").style.backgroundImage =
+                    "url('assets/img/john-o-nolan-rqrv0bbzMLg-unsplash.jpg')";
+            }
+        });
+    </script>
+</head>
+<!-- END PAGE HEADER -->
+
+<body class="index-page sidebar-collapse">
+    <!-- Navbar -->
+    {% include "templates/nav.html" %}
+    <!-- End Navbar -->
+
+    <div class="wrapper">
+        <!-- Put main data here! -->
+        <div class="page-header page-header-small">
+            <div class="page-header-image" data-parallax="true" id="headerImage">
+            </div>
+        </div>
+        <div class="main">
+            <div class="contact-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 ml-auto mr-auto">
+                            <h2 class="title">Send us a message</h2>
+                            <p class="description">You can contact us with anything related to our services. We'll get
+                                in touch with you as soon as possible.
+                                <br>
+                                <br>
+                            </p>
+                            <form role="form" id="messageUs" method="post">
+                                <label>Your name</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i
+                                                class="now-ui-icons users_circle-08"></i></span>
+                                    </div>
+                                    <input type="text" id='contactName' class="form-control" placeholder="Your Name..."
+                                        aria-label="Your Name..." autocomplete="name" required>
+                                </div>
+                                <label>Email address</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+                                    </div>
+                                    <input type="email" id="contactEmail" class="form-control"
+                                        placeholder="Email Here..." aria-label="Email Here..." autocomplete="email"
+                                        required>
+                                </div>
+                                <label>Phone</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="now-ui-icons tech_mobile"></i></span>
+                                    </div>
+                                    <input type="text" id="contactNumber" class="form-control"
+                                        placeholder="Number Here..." autocomplete="number">
+                                </div>
+                                <div class="form-group">
+                                    <label>Your message</label>
+                                    <textarea name="message" id="message" class="form-control" id="message"
+                                        rows="6"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <label class="form-check-label small">
+                                                <p class="small">This site is protected by reCAPTCHA and the Google
+                                                    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                                                    <a href="https://policies.google.com/terms">Terms of Service</a>
+                                                    apply.</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" id="successmsg">
+                                        <button type="submit" id="submitContactReq" class="btn btn-primary btn-round pull-right">Contact
+                                            us</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-5 ml-auto mr-auto">
+                            <div class="info info-horizontal mt-5">
+                                <div class="icon icon-primary">
+                                    <i class="now-ui-icons location_pin"></i>
+                                </div>
+                                <div class="description">
+                                    <h4 class="info-title">Find us at the office</h4>
+                                    <p class="description"> Villa Carra,
+                                        <br> 6 Sommerville Avenue,
+                                        <br> Melrose Estate,
+                                        <br> Johannesburg, 2191
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info info-horizontal">
+                                <div class="icon icon-primary">
+                                    <i class="now-ui-icons tech_mobile"></i>
+                                </div>
+                                <div class="description">
+                                    <h4 class="info-title">Give us a ring</h4>
+                                    <p class="description">Daniel Donaldson
+                                        <br> <a
+                                            href="mailto:hello@stead.africa?&subject=Request%20from%20website&body=Hi+Daniel%2C%0D%0A%0D%0APlease+contact+me+back+as+soon+as+possible.%0D%0A%0D%0AKind+regards">hello@stead.africa</a>
+                                        <br> <a href="tel:0763304852">076 330 4852</a>
+                                        <br> Mon - Fri, 08:00-22:00
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info info-horizontal">
+                                <div class="icon icon-primary">
+                                    <i class="business_briefcase-24 now-ui-icons"></i>
+                                </div>
+                                <div class="description">
+                                    <h4 class="info-title">Legal Information</h4>
+                                    <p> Daniel Donaldson Digital Pty Ltd
+                                        <br> CIPC 2019/310886/07
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contactUs2Map" class="big-map"></div>
+    </div>
+    <!-- FOOTER -->
+    {% include "templates/foot.html" %}
+    {% include "templates/contactJs.html" %}
+
+</body>
+
+</html>

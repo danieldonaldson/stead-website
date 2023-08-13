@@ -1,0 +1,133 @@
+{% import "templates/imgset.html" as imgset %}
+<footer class="footer footer-big footer-white">
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>About Us</h5>
+          <p>stead. Do less, get more</p>
+          <p>A world where people spend less time doing things that don’t matter.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Social Feed</h5>
+          <div class="social-feed">
+            <div class="feed-line">
+              <i class="fa fa-twitter"></i>
+              <p>Coming soon...</p>
+            </div>
+            <div class="feed-line">
+              <i class="fa fa-instagram"></i>
+              <p>Check back shortly for our social feeds</p>
+            </div>
+            <div class="feed-line">
+              <i class="fa fa-facebook-square"></i>
+              <p>@steadafrica</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5>Instagram Feed</h5>
+          <div class="gallery-feed">
+            {{ imgset.pictureFixed("olivia","jpg",100) }}
+            {{ imgset.pictureFixed("james","jpg",100) }}
+            {{ imgset.pictureFixed("michael","jpg",100) }}
+            {{ imgset.pictureFixed("emily","jpg",100) }}
+            {{ imgset.pictureFixed("marie","jpg",100) }}
+            {{ imgset.pictureFixed("usher","jpg",100) }}
+            {{ imgset.pictureFixed("mike","jpg",100) }}
+            {{ imgset.pictureFixed("julie","jpg",100) }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="copyright pull-right">
+      <span class="copyright">
+        © <span id="current-year"> </span> stead. All rights reserved
+      </span>
+    </div>
+  </div>
+  <div
+    style="width: 100%; background-color: white; padding: 10px 0px 10px 0px; text-align: center; box-sizing: border-box;">
+    <a style="display: flex; justify-content: center; flex-wrap: wrap; width:100%; text-decoration:none; text-align:center;"
+      href="https://sacoronavirus.co.za/">
+      <div class="main-corona-banner" style="display: inline-block; background-color: white; flex-grow: 2;">
+        <img style="width: 294px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/main.png"
+          alt="South African Government COVID-19 Portal" />
+      </div>
+      <div style="display: flex; flex-grow: 4; justify-content: center; flex-wrap: wrap;">
+        <div style="display: flex; flex-grow: 1; justify-content: space-around; flex-wrap: wrap;">
+          <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
+            <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/tested.png"
+              alt="South Africa COVID-19 Tested Numbers" />
+          </div>
+          <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
+            <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/positive.png"
+              alt="South Africa COVID-19 Positive Cases" />
+          </div>
+        </div>
+        <div style="display: flex; flex-grow: 1; justify-content: space-around; flex-wrap: wrap;">
+          <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
+            <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/cured.png"
+              alt="South Africa COVID-19 Recovered Numbers" />
+          </div>
+          <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
+            <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/deaths.png"
+              alt="South Africa COVID-19 Death Numbers" />
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</footer>
+<!-- END FOOTER -->
+
+<!--   Core JS Files   -->
+
+<script>
+  document.getElementById("current-year").innerHTML = new Date().getFullYear();
+</script>
+<script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="./assets/js/modernizr-custom.js" type="text/javascript"></script>
+<script>
+  Modernizr.on('webp', function (result) {
+    if (!result) {
+      document.getElementById("navImage").style.backgroundImage = "url('assets/img/blurred-image-1.jpg')";
+    }
+  });
+</script>
+
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<!-- <script src="./assets/js/plugins/bootstrap-switch.js"></script> -->
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<!-- <script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script> -->
+<!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+<!-- <script src="./assets/js/plugins/moment.min.js"></script> -->
+<!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+<!-- <script src="./assets/js/plugins/bootstrap-tagsinput.js"></script> -->
+<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+<!-- <script src="./assets/js/plugins/bootstrap-selectpicker.js" type="text/javascript"></script> -->
+<!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+<!-- <script src="./assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script> -->
+<!--  Google Maps Plugin    -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
+<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+<script src="./assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
+
+<!-- <script>
+      $(document).ready(function () {
+        // the body of this function is in assets/js/now-ui-kit.js
+        nowuiKit.initSliders();
+      });
+
+      function scrollToDownload() {
+
+        if ($('.section-download').length != 0) {
+          $("html, body").animate({
+            scrollTop: $('.section-download').offset().top
+          }, 1000);
+        }
+      }
+    </script> -->

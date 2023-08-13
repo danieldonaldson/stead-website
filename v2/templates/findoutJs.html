@@ -1,0 +1,31 @@
+<script>
+    $("#find-out").submit(function (e) {
+        e.preventDefault();
+        grecaptcha.ready(function () {
+            // do request for recaptcha token
+            // response is promise with passed token
+            grecaptcha.execute('6LcmRKoZAAAAAF7kd3EAKNJ3nMPnT0vgIYULm-Zj', {
+                action: 'contactUs'
+            }).then(function (token) {
+                // add token to form
+                $('#messageUs').prepend(
+                    '<input type="hidden" name="g-recaptcha-response" value="' + token +
+                    '">');
+                $.ajax({
+                    url: './modules/sendinfo',
+                    type: 'POST',
+                    data: {
+                        contactEmail: $('#findoutemail').val(),
+                        contactName: "Find out button clicked",
+                        gtoken: token
+                    },
+                    success: function (msg) {
+                        $("#findoutdone").html(
+                            "<p>Thanks! We will be in contact within 2 business days!</p>"
+                            );
+                    }
+                });
+            });
+        });
+    });
+</script>

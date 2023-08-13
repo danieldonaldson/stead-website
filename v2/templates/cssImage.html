@@ -1,0 +1,65 @@
+{% macro cssPicture(name, image, extension) %}
+<style>
+    #{{ name }} {
+      background-image: url("assets/img-responsive/{{ image }}-extralarge.{{ extension }}");
+      background-image: -webkit-image-set(
+          url("assets/img-responsive/{{ image }}-small.webp")1x,
+          url("assets/img-responsive/{{ image }}-med.webp")1x
+        );  
+        background-image: image-set(
+          url("assets/img-responsive/{{ image }}-small.webp")1x,
+          url("assets/img-responsive/{{ image }}-med.webp")2x
+        );
+    }
+    @media (min-width: 350px) {
+      #{{ name }} {
+        background-image: url("assets/img-responsive/{{ image }}-med.{{ extension }}");
+        background-image: -webkit-image-set(
+          url("assets/img-responsive/{{ image }}-med.webp")1x,
+          url("assets/img-responsive/{{ image }}-large.webp")2x
+        );  
+        background-image: image-set(
+          url("assets/img-responsive/{{ image }}-med.webp")1x,
+          url("assets/img-responsive/{{ image }}-large.webp")2x
+        );
+      }
+    }
+    @media (min-width: 1000px) {
+      #{{ name }} {
+        background-image: url("assets/img-responsive/{{ image }}-large.{{ extension }}");
+        background-image: -webkit-image-set(
+          url("assets/img-responsive/{{ image }}-large.webp")1x,
+          url("assets/img-responsive/{{ image }}-extralarge.webp")2x
+        );  
+        background-image: image-set(
+          url("assets/img-responsive/{{ image }}-large.webp")1x,
+          url("assets/img-responsive/{{ image }}-extralarge.webp")2x
+        );
+      }
+    }
+    @media (min-width: 2000px) {
+      #{{ name }} {
+        background-image: url("assets/img-responsive/{{ image }}-extralarge.{{ extension }}");
+        background-image: -webkit-image-set(
+          url("assets/img-responsive/{{ image }}-extralarge.webp")1x,
+          url("assets/img-responsive/{{ image }}-huge.webp")2x
+        );  
+        background-image: image-set(
+          url("assets/img-responsive/{{ image }}-extralarge.webp")1x,
+          url("assets/img-responsive/{{ image }}-huge.webp")2x
+        );
+      }
+    }
+    @media (min-width: 4000px) {
+      #{{ name }} {
+        background-image: url("assets/img-responsive/{{ image }}-huge.{{ extension }}");
+        background-image: -webkit-image-set(
+          url("assets/img-responsive/{{ image }}-huge.webp")1x
+        );  
+        background-image: image-set(
+          url("assets/img-responsive/{{ image }}-huge.webp")1x
+        );
+      }
+    }
+  </style>
+{% endmacro %}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- PAGE HEADER -->
+
+<head>
+  {% import "templates/head.html" as head %}
+  {% import "templates/imgset.html" as imgset %}
+  {% import "templates/cssImage.html" as cssImage %}
+
+  {{ head.header("stead. Home","stead. digital innovation") }}
+  <meta property="og:url" content="https://stead.africa/ourstory.html" />
+  <!-- <meta property="og:image"
+    content="https://silience.co.za/assets/img-responsive/helloquence-5fNmWej4tAA-unsplash-small.jpg" />
+  <meta name="twitter:image:src"
+    content="https://silience.co.za/assets/img-responsive/helloquence-5fNmWej4tAA-unsplash-small.jpg"/> -->
+  {{ cssImage.cssPicture("header1","jeremy-perkins-UgNjyPkphtU-unsplash","jpg") }}
+  {{ cssImage.cssPicture("story1","hao-wang-pVq6YhmDPtk-unsplash","jpg") }}
+  {{ cssImage.cssPicture("story2","oliver-pecker-HONJP8DyiSM-unsplash","jpg") }}
+  {{ cssImage.cssPicture("story3","alex-tXYg4Zx7kSU-unsplash","jpg") }}
+  {{ cssImage.cssPicture("story4","billy-williams-8wz1Q4Q_XAg-unsplash","jpg") }}
+  <script>
+    Modernizr.on('webp', function (result) {
+      if (!result) {
+        document.getElementById("header1").style.backgroundImage =
+          "url('assets/img/jeremy-perkins-UgNjyPkphtU-unsplash.webp')";
+        document.getElementById("story1").style.backgroundImage = "url('assets/img/hao-wang-pVq6YhmDPtk-unsplash.jpg')";
+        document.getElementById("story2").style.backgroundImage = "url('assets/img/oliver-pecker-HONJP8DyiSM-unsplash.jpg')";
+        document.getElementById("story3").style.backgroundImage = "url('assets/img/alex-tXYg4Zx7kSU-unsplash.jpg')";
+        document.getElementById("story4").style.backgroundImage = "url('assets/img/billy-williams-8wz1Q4Q_XAg-unsplash.jpg')";
+      }
+    });
+  </script>
+</head>
+<!-- END PAGE HEADER -->
+
+<body class="landing-page sidebar-collapse">
+  <!-- Navbar -->
+  {% include "templates/nav.html" %}
+  <!-- End Navbar -->
+
+  <div class="wrapper">
+    <div class="main">
+      <!-- Put main data here! -->
+      <div class="page-header page-header-small">
+        <div class="page-header-image" data-parallax="true" id="header1">
+        </div>
+        <div class="content-center">
+          <div class="container">
+            <h1 class="title">We make things simple</h1>
+            <div class="text-center">
+              <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+              <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section section-about-us">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 ml-auto mr-auto text-center">
+              <h2 class="title">How do we do it?</h2>
+              <h5 class="description">We mix the latest digital tech with reliable old ways of doing things to create a
+                custom solution that solves a single problem. Our team has engineering, and management consulting
+                background. Which means we design the best solution, which solves the real problem
+              </h5>
+            </div>
+          </div>
+          <div class="separator separator-primary"></div>
+          <div class="section-story-overview">
+            <div class="row">
+              <div class="col-md-6">
+                <!-- First image on the left side -->
+                <div class="image-container image-left" id="story1">
+                  <p class="blockquote blockquote-primary">"Simple can be harder than complex: You have to work hard to
+                    get your thinking clean to make it simple. But it’s worth it in the end because once you get there,
+                    you can move mountains."
+                    <br>
+                    <br>
+                    <small>Steve Jobs</small>
+                  </p>
+                </div>
+                <!-- Second image on the left side of the article -->
+                <div class="image-container image-left-bottom" id="story2">
+                </div>
+              </div>
+              <div class="col-md-5">
+                <!-- First image on the right side, above the article -->
+                <div class="image-container image-right" id="story3"></div>
+                <h3>So how will you do this for me?</h3>
+                <p>We are the experts in digital innovation. What does this mean? We come up with the best solutions for your business to meet your needs
+                </p>
+                <p>We create this excellence by engineering your people, processes and technology. We don't leave any stone unturned. It's all about a collaborative problem solving approach with the end user, to solve their business/world problem.
+                  User interaction is favoured, and solutions are developed for the platform they will be using, with fast response times and great ergonomics.
+                </p>
+                <p>We make sure that we always stay like this, as our team is always:
+                  <ul>
+                    <li>Learning</li>
+                    <li>Open minded</li>
+                    <li>Serving others</li>
+                    <li>Fun</li>
+                    <li>Inspirational</li>
+                    <li>Diverse</li>
+                    <li>Exceedingly ethical</li>
+                    <li>Performance & self-improvement driven</li>
+                    <li>Mentoring each other</li>
+                  </ul>
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials-1 section-image" id="story4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 ml-auto mr-auto text-center">
+              <h2 class="title">What do our customers say?</h2>
+              <h4 class="description text-white">It's our passion to make your life simpler, so you can get more and do less. See how we've already done this for others</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 same-height">
+              <div class="card card-testimonial">
+                <div class="card-avatar">
+                  <a href="#pablo">
+                    {{ imgset.picturePercent("michael","jpg",33) }}
+                  </a>
+                </div>
+                <div class="card-body">
+                  <p class="card-description">
+                    stead. has made it so that I don't need to think about the boring things and get on with what I love doing
+                  </p>
+                </div>
+                <div class="icon icon-primary">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <div class="card-footer">
+                  <h4 class="card-title">Quentin</h4>
+                  <!-- <p class="category">@michaelelijah</p> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 same-height">
+              <div class="card card-testimonial">
+                <div class="card-avatar">
+                  <a href="#pablo">
+                    {{ imgset.picturePercent("olivia","jpg",33) }}                    
+                  </a>
+                </div>
+                <div class="card-body">
+                  <p class="card-description">
+                    stead. has revolutionised my business with tools from Zoho, which allow me to manage my entire business more easily
+                  </p>
+                </div>
+                <div class="icon icon-primary">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <div class="card-footer">
+                  <h4 class="card-title">Jennifer</h4>
+                  <!-- <p class="category">@oliviaharper</p> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 same-height">
+              <div class="card card-testimonial">
+                <div class="card-avatar">
+                  <a href="#pablo">
+                    
+                  </a>
+                </div>
+                <div class="card-body">
+                  <p class="card-description">
+                    Contact us to get your story here!
+                  </p>
+                </div>
+                <div class="icon icon-primary">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <div class="card-footer">
+                  <h4 class="card-title">You</h4>
+                  <!-- <p class="category">@jameslogan</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section-contact-us text-center">
+        <div class="container">
+          <h2 class="title">Want to work with us?</h2>
+          <p class="description">Your project is very important to us.</p>
+          <div class="row">
+            <div class="col-lg-6 text-center ml-auto mr-auto col-md-8">
+              {% include "templates/contactCard.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  {% include "templates/foot.html" %}
+  {% include "templates/contactJs.html" %}
+  
+</body>
+
+</html>

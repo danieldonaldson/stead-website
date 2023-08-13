@@ -1,0 +1,44 @@
+{
+  "name": "silience-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieldonaldson/Silience-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieldonaldson/Silience-Website/issues"
+  },
+  "homepage": "https://github.com/danieldonaldson/Silience-Website#readme",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-css-purge": "^3.0.9",
+    "gulp-gzip": "^1.4.2",
+    "gulp-hash": "^4.2.2",
+    "gulp-hash-references": "^3.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-nunjucks": "^5.0.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sitemap": "^7.6.0",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.13.1",
+    "purge-from-html": "^1.0.3",
+    "readable-stream": "^3.5.0"
+  },
+  "dependencies": {
+    "critical": "^2.0.1",
+    "fancy-log": "^1.3.3",
+    "gulp-debug": "^4.0.0",
+    "gulp-responsive": "^3.0.1"
+  }
+}
