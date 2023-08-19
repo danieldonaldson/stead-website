@@ -22,6 +22,11 @@
                         $("#successmsg").html(
                             "<p>Thanks for your request! We will be in contact soon</p>"
                             );
+                    },
+                    error: function (msg) {
+                        $("#findoutdone").html(
+                            "<p>Something seems to have gone wrong :( Please reload the page and try again</p>"
+                            );
                     }
                 });
             });
