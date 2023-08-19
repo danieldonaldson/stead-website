@@ -4,22 +4,19 @@
         grecaptcha.ready(function () {
             // do request for recaptcha token
             // response is promise with passed token
-            grecaptcha.execute('6LcmRKoZAAAAAF7kd3EAKNJ3nMPnT0vgIYULm-Zj', {
+            grecaptcha.execute('6LdrxqcnAAAAANGpfPhIGzWvPRAniLMTWp1eznv4', {
                 action: 'contactUs'
             }).then(function (token) {
-                // add token to form
-                $('#messageUs').prepend(
-                    '<input type="hidden" name="g-recaptcha-response" value="' + token +
-                    '">');
                 $.ajax({
-                    url: './modules/sendinfo',
+                    url: 'api/v0/captcha',
                     type: 'POST',
                     data: {
-                        contactName: $('#contactName').val(),
-                        contactEmail: $('#contactEmail').val(),
-                        contactNumber: $('#contactNumber').val(),
-                        message: $('#message').val(),
-                        gtoken: token
+                        site: 'stead_africa',
+                        Name: $('#contactName').val(),
+                        Email: $('#contactEmail').val(),
+                        Number: $('#contactNumber').val(),
+                        Message: $('#message').val(),
+                        'g-recaptcha-response': token
                     },
                     success: function (msg) {
                         $("#successmsg").html(
