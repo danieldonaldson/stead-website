@@ -1,0 +1,54 @@
+<div class="card card-contact card-raised">
+  <form role="form" id="messageUs" method="post">
+    <div class="card-header text-center">
+      <h4 class="card-title">Contact Us</h4>
+    </div>
+    <div class="card-body">
+      <label>Name</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+        </div>
+        <input type="text" id='contactName' class="form-control" placeholder="Your Name..."
+          aria-label="Your Name..." autocomplete="name" required>
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+          </div>
+          <input type="email" id="contactEmail" class="form-control" placeholder="Email Here..."
+            aria-label="Email Here..." autocomplete="email" required>
+        </div>
+      </div>
+      <label>Phone</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="now-ui-icons tech_mobile"></i></span>
+        </div>
+        <input type="text" id="contactNumber" class="form-control" placeholder="Number Here..."
+          autocomplete="number">
+      </div>
+      <div class="form-group">
+        <label>Your message</label>
+        <textarea name="message" class="form-control" id="message" rows="6"></textarea>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-check">
+            <label class="form-check-label small">
+              <p class="small">This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms">Terms of Service</a>
+                apply.</p>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6" id="successmsg">
+          <button type="submit" id="submitContactReq" class="btn btn-primary btn-round pull-right">Contact us</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

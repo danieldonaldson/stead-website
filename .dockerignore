@@ -1,0 +1,15 @@
+node_modules
+dist
+dist-stead
+tmp
+.git
+.github
+.astro
+.env
+.env.local
+.DS_Store
+*.log
+npm-debug.log*
+pnpm-debug.log*
+gulpfile.js
+package-lock.json

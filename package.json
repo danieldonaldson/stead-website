@@ -1,11 +1,14 @@
 {
-  "name": "silience-website",
+  "name": "stead-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
+  "description": "stead. website built with Astro",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -17,29 +20,12 @@
     "url": "https://github.com/danieldonaldson/Silience-Website/issues"
   },
   "homepage": "https://github.com/danieldonaldson/Silience-Website#readme",
-  "devDependencies": {
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-css-purge": "^3.0.9",
-    "gulp-gzip": "^1.4.2",
-    "gulp-hash": "^4.2.2",
-    "gulp-hash-references": "^3.0.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-newer": "^1.4.0",
-    "gulp-nunjucks": "^5.0.1",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sitemap": "^7.6.0",
-    "gulp-uglify": "^3.0.2",
-    "puppeteer": "^21.0.3",
-    "purge-from-html": "^1.0.3",
-    "readable-stream": "^3.5.0",
-    "sass": "^1.65.1"
-  },
   "dependencies": {
-    "critical": "^5.1.1",
-    "fancy-log": "^1.3.3",
-    "gulp-debug": "^4.0.0"
+    "@astrojs/check": "^0.9.6",
+    "astro": "^5.16.4",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "sass": "^1.94.2"
   }
 }

@@ -1,0 +1,23 @@
+FROM node:20-alpine
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json pnpm-lock.yaml* ./
+
+# Install dependencies
+RUN pnpm install
+
+# Compile SCSS to CSS
+COPY assets/scss ./assets/scss
+COPY assets/css ./assets/css
+RUN mkdir -p public/css && \
+    pnpm sass assets/scss/now-ui-kit.scss public/css/now-ui-kit.css && \
+    cp assets/css/stead.css public/css/stead.css
+
+EXPOSE 4321
+
+CMD ["pnpm", "dev", "--host", "0.0.0.0"]
