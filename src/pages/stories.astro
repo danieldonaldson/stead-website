@@ -4,18 +4,203 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Stories" description="stead. stories" ogUrl="https://stead.africa/stories">
+<BaseLayout
+  title="Stories"
+  description="stead. digital innovation"
+  ogUrl="https://stead.africa"
+>
+  <Fragment slot="head">
+    <style is:inline>
+      #header1 {
+        background-image: url('/img/ej-yao-D46mXLsQRJw-unsplash.jpg');
+      }
+      #card1 {
+        background-image: url('/img/project10.jpg');
+      }
+      #card2 {
+        background-image: url('/img/project11.jpg');
+      }
+      #card3 {
+        background-image: url('/img/project12.jpg');
+      }
+      #card4 {
+        background-image: url('/img/project13.jpg');
+      }
+    </style>
+  </Fragment>
+
   <Nav />
+
   <div class="wrapper">
-    <div class="page-header page-header-small">
-      <div class="page-header-image" style="background-image: url('/img/bg29.jpg');"></div>
-    </div>
-    <div class="main">
-      <div class="container">
-        <h2 class="title">Stories</h2>
-        <p>Content coming soon...</p>
+    <div class="blog-posts">
+      <div class="page-header page-header-small">
+        <div class="page-header-image" data-parallax="true" id="header1">
+        </div>
+        <div class="content-center">
+          <div class="row">
+            <div class="col-md-8 ml-auto mr-auto text-center">
+              <h2 class="title">Stories being added soon!</h2>
+              <a href="#button" class="btn btn-primary btn-round  btn-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#button" class="btn btn-primary btn-round  btn-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="projects-4">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 px-0">
+              <div class="card card-fashion card-background" id="card1">
+                <div class="card-body">
+                  <div class="card-title text-left">
+                    <h2>
+                      <a href="#pablo">
+                        Story 1
+                      </a>
+                    </h2>
+                  </div>
+                  <div class="card-footer text-left">
+                    <div class="stats">
+                      <span>
+                        <i class="now-ui-icons users_circle-08"></i>Daniel Donaldson
+                      </span>
+                      <span>
+                        <i class="now-ui-icons tech_watch-time"></i> 1 Jan 2020
+                      </span>
+                    </div>
+                    <div class="stats-link pull-right">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 px-0">
+              <div class="card card-fashion">
+                <div class="card-title">
+                  <a href="#pablo">
+                    <h4>
+                      <a href="#pablo">
+                        Story 2
+                      </a>
+                    </h4>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <div class="card-footer">
+                    <div class="stats">
+                      <span>
+                        <i class="now-ui-icons users_circle-08"></i>Daniel Donaldson
+                      </span>
+                      <span>
+                        <i class="now-ui-icons tech_watch-time"></i> 1 Jan 2020
+                      </span>
+                    </div>
+                    <div class="stats-link pull-right">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 px-0">
+              <div class="card card-fashion card-background" id="card2">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 px-0">
+              <div class="card card-fashion card-background" id="card3">
+              </div>
+            </div>
+            <div class="col-md-3 px-0">
+              <div class="card card-fashion arrow-left">
+                <div class="card-title">
+                  <h4>
+                    <a href="#pablo">
+                      Story 3
+                    </a>
+                  </h4>
+                </div>
+                <div class="card-body">
+                  <div class="card-footer">
+                    <div class="stats">
+                      <span>
+                        <i class="now-ui-icons users_circle-08"></i> Daniel Donaldson
+                      </span>
+                      <span>
+                        <i class="now-ui-icons tech_watch-time"></i> 1 Jan 2020
+                      </span>
+                    </div>
+                    <div class="stats-link pull-right">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 px-0">
+              <div class="card card-fashion card-background" id="card4">
+                <div class="card-body">
+                  <div class="card-title text-left">
+                    <h2>
+                      <a href="#pablo">Story 4</a>
+                    </h2>
+                  </div>
+                  <div class="card-footer text-left">
+                    <div class="stats">
+                      <span>
+                        <i class="now-ui-icons users_circle-08"></i> Daniel Donaldson
+                      </span>
+                      <span>
+                        <i class="now-ui-icons tech_watch-time"></i> 1 Jan 2020
+                      </span>
+                    </div>
+                    <div class="stats-link pull-right">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subscribe-line subscribe-line-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h4 class="title">Get updates from us every month</h4>
+              <p class="description">
+                Join our newsletter and get news in your inbox every month! We hate spam too, so no worries about this.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div class="card card-plain card-form-horizontal">
+                <div class="card-content">
+                  <form method="" action="">
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Email address...">
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary btn-round btn-block">Subscribe</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
   <Footer />
 </BaseLayout>

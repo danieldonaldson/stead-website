@@ -2,20 +2,168 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+// Import images
+import bg28Img from '../assets/img/bg28.jpg';
+import bg26Img from '../assets/img/bg26.jpg';
+import bg27Img from '../assets/img/bg27.jpg';
+import bg29Img from '../assets/img/bg29.jpg';
 ---
 
-<BaseLayout title="Performance Promise" description="Our performance promise" ogUrl="https://stead.africa/performance">
+<BaseLayout
+  title="Performance Promise"
+  description="stead. digital innovation"
+  ogUrl="https://stead.africa/performance.html"
+>
+  <Fragment slot="head">
+    <style is:inline>
+      #header1 {
+        background-image: url('/img/xuan-nguyen-KcWIsfbBfa4-unsplash.jpg');
+      }
+      #performance1 {
+        background-image: url('/img/joanna-kosinska-7ACuHoezUYk-unsplash.jpg');
+      }
+    </style>
+  </Fragment>
+
   <Nav />
+
   <div class="wrapper">
-    <div class="page-header page-header-small">
-      <div class="page-header-image" style="background-image: url('/img/bg28.jpg');"></div>
-    </div>
     <div class="main">
-      <div class="container">
-        <h2 class="title">Performance Promise</h2>
-        <p>Content coming soon...</p>
+      <div class="header-1">
+        <div class="page-header header-filter">
+          <div class="page-header-image" id='header1'></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7 ml-auto text-right">
+                <h1 class="title">We're performance driven. Not just ours, but yours too</h1>
+                <h4 class="description">At stead. we know that you can't do your work, if what you're using doesn't work. Scroll down to see how we value your performance</h4>
+                <br />
+                <div class="buttons">
+                  <a href="#more" class="btn btn-info btn-lg mr-3">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a name="more"></a>
+
+      <div class="features-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5">
+              <h2 class="title">This is our promise</h2>
+
+              <div class="info info-horizontal">
+                <div class="icon icon-primary icon-circle">
+                  <i class="now-ui-icons location_world"></i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">99.9% Uptime</h4>
+                  <p>How can you use it if it's not available? Our promise is that your service will be up for 99.9% of the time</p>
+                </div>
+              </div>
+              <div class="info info-horizontal">
+                <div class="icon icon-primary icon-circle">
+                  <i class="now-ui-icons sport_user-run"></i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Ready in less than 1 second</h4>
+                  <p>How can you use it if you can't see it? Our promise is that your service will be ready for input within 1 second</p>
+                </div>
+              </div>
+              <div class="info info-horizontal">
+                <div class="icon icon-primary icon-circle">
+                  <i class="now-ui-icons ui-2_time-alarm"></i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Useable without a manual</h4>
+                  <p>How can you use it if you don't know how? Our promise is that your service will be useable by someone new without complicated training or manuals</p>
+                </div>
+              </div>
+              <br />
+              <h6>We verify all of our promises with the latest independent tools</h6>
+            </div>
+            <div class="col-md-7">
+              <div class="tablet-container">
+                <img src="/img/ipad2-inverted.png" alt="iPad interface" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="features-8 section-image" id="performance1">
+        <div class="col-md-8 ml-auto mr-auto text-center">
+          <h2 class="title">We believe in four pillars of good performance</h2>
+          <h4 class="description">How can things be simple if they don't even work well? How can users interact with a platform if they're always waiting for it? They can't</h4>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 same-height">
+              <div class="card">
+                <div class="card-image">
+                  <Image src={bg28Img} alt="Simple" width={300} height={200} format="webp" quality={80} />
+                </div>
+                <div class="info text-center">
+                  <div class="icon">
+                    <i class="now-ui-icons design_app"></i>
+                  </div>
+                  <h4 class="info-title">Simple</h4>
+                  <p class="description">At stead., we love to solve the right problems. By solving the right problem and nothing more, we ensure there is less to take away from the solution. Efficient, and effective which gives us good performance</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 same-height">
+              <div class="card">
+                <div class="card-image">
+                  <Image src={bg26Img} alt="Ergonomic" width={300} height={200} format="webp" quality={80} />
+                </div>
+                <div class="info text-center">
+                  <div class="icon">
+                    <i class="now-ui-icons design-2_ruler-pencil"></i>
+                  </div>
+                  <h4 class="info-title">Ergonomic</h4>
+                  <p class="description">By designing with the user, we create a solution that is intuitive and easy to use. A design should cater for a smooth user experience and thus excellence performance</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 same-height">
+              <div class="card">
+                <div class="card-image">
+                  <Image src={bg27Img} alt="Innovative" width={300} height={200} format="webp" quality={80} />
+                </div>
+                <div class="info text-center">
+                  <div class="icon">
+                    <i class="now-ui-icons ui-1_send"></i>
+                  </div>
+                  <h4 class="info-title">Innovative</h4>
+                  <p class="description">How do you achieve all these things and still deliver a product in time? The key at stead. is innovation. We use the latest tech to ensure a great user experience without overcomplicating things</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 same-height">
+              <div class="card">
+                <div class="card-image">
+                  <Image src={bg29Img} alt="Native" width={300} height={200} format="webp" quality={80} />
+                </div>
+                <div class="info text-center">
+                  <div class="icon">
+                    <i class="now-ui-icons ui-2_like"></i>
+                  </div>
+                  <h4 class="info-title">Native</h4>
+                  <p class="description">We believe that by building on the experience of others we build taller and quicker. A catch-all solution often speeds up time in the beginning, but slows you down at the end. We design solutions that meet you where you are</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
   <Footer />
 </BaseLayout>

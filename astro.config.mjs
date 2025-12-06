@@ -6,6 +6,11 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'auto',
   },
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+  },
   vite: {
     build: {
       cssMinify: true,

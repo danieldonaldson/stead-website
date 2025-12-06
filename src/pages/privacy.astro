@@ -4,18 +4,240 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Privacy Policy" description="stead. privacy policy" ogUrl="https://stead.africa/privacy">
+<BaseLayout
+  title="Privacy Policy"
+  description="stead. digital innovation"
+  ogUrl="https://stead.africa/privacy.html"
+>
+  <Fragment slot="head">
+    <style is:inline>
+      #header1 {
+        background-image: url('/img/josh-rose-trYl7JYATH0-unsplash.jpg');
+      }
+    </style>
+  </Fragment>
+
   <Nav />
-  <div class="wrapper">
-    <div class="page-header page-header-small">
-      <div class="page-header-image" style="background-image: url('/img/bg27.jpg');"></div>
-    </div>
-    <div class="main">
+
+  <div class="page-header header-filter" filter-color="black">
+    <div class="page-header-image" id="header1"></div>
+    <div class="content">
       <div class="container">
-        <h2 class="title">Privacy Policy</h2>
-        <p>Content coming soon...</p>
+        <div class="row">
+          <div class="col-md-12 middle-column">
+            <div class="card card-signup">
+              <div class="card-body">
+                <h4 class="card-title text-center">Privacy policy</h4>
+                <p class="text-muted">
+                  Effective date: 1 January 2020
+                </p>
+                <p class="card-description privacy-text text-left">Your privacy is very important to us. Before we get
+                  to the details, check out our Privacy Label to see a summary of our privacy practices. Click on the
+                  links to learn more and read the full policy below.</p>
+                <h5 class="privacy-text">Privacy Label</h5>
+                <section class='section-label'>
+                  <h6 class='label-heading'>Collection and Sale of Data</h6>
+                  <ul>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we sell your personal information?</span>
+                      <span class='pull-right'><a href='#aggregate_information'>No</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we share or sell aggregate information?</span>
+                      <span class='pull-right'><a href='#aggregate_information'>No</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we share your data with third party API partners?</span>
+                      <span class='pull-right'><a href='#third_parties'>Only with your consent</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we delete your data when you request account deletion?</span>
+                      <span class='pull-right'><a href='#retention'>Yes</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we retain your data for as long as we need it unless you request
+                        deletion?</span>
+                      <span class='pull-right'><a href='#retention'>Yes</a></span>
+                      <div class='clear'></div>
+                    </li>
+                  </ul>
+                </section>
+                <section class='section-label'>
+                  <h6 class='label-heading'>Privacy Tools and Controls</h6>
+                  <ul>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Can you control who sees your activity and content?</span>
+                      <span class='pull-right'><a href='#third_parties'>Yes</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Can you download and delete your data?</span>
+                      <span class='pull-right'><a href='#retention'>Yes</a></span>
+                      <div class='clear'></div>
+                    </li>
+                  </ul>
+                </section>
+                <section class='section-label'>
+                  <h6 class='label-heading'>Tracking</h6>
+                  <ul>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we track your device location to provide services to you?</span>
+                      <span class='pull-right'><a href='#learn_information'>No</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we track your device location while you are not using the
+                        app?</span>
+                      <span class='pull-right'><a href='#learn_information'>No</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we use cookies?</span>
+                      <span class='pull-right'><a href='#learn_information'>Yes</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we track your browsing activities on other sites?</span>
+                      <span class='pull-right'><a href='#learn_information'>No</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we listen to you using your device microphone?</span>
+                      <span class='pull-right'><a href='#learn_information'>No</a></span>
+                      <div class='clear'></div>
+                    </li>
+                  </ul>
+                </section>
+                <section class='section-label'>
+                  <h6 class='label-heading'>Communication</h6>
+                  <ul>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we give you advance notice when we make important changes to our
+                        Privacy Policy?</span>
+                      <span class='pull-right'><a href='#privacy_policy_information'>Yes</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we send you marketing communications with opt out?</span>
+                      <span class='pull-right'><a href='#notification'>Yes</a></span>
+                      <div class='clear'></div>
+                    </li>
+                    <li class='label-item'>
+                      <span class='privacy-text'>Do we send you push notifications with opt out?</span>
+                      <span class='pull-right'><a href='#notification'>Yes</a></span>
+                      <div class='clear'></div>
+                    </li>
+                  </ul>
+
+              </div>
+              <h5 class="privacy-text">Privacy Policy</h5>
+              <section class='section-policy'>
+                <h6 class="privacy-text">Introduction</h6>
+                <div class="privacy-text">
+                  <p>Our privacy policy (the "Privacy Policy") explains the information we collect, how we use and share
+                    it, how to manage your privacy controls and your rights in connection with our websites and the
+                    related mobile applications and services (collectively, the "Services").
+                    <p>stead. is headquartered in Johannesburg and our Services are provided to you by Daniel Donaldson Digital Pty
+                      Ltd. If you
+                      are a resident of the European Economic Area ("EEA"), stead. is the controller of your personal
+                      data for the purposes of EEA data protection law.</p>
+                    <p>This policy was written in English. To the extent a translated version conflicts with the English
+                      version, the English version controls. Unless indicated otherwise, this Privacy Policy does not
+                      apply
+                      to third party products or services or the practices of companies that we do not own or control,
+                      including other companies you might interact with on or through the Services.</p>
+                    <p>Questions or comments about this Privacy Policy may be submitted via our
+                      <a href='contact.html'>Contact Us Page</a>.</p>
+                    <a name="aggregate_information"></a>
+                    <h6>What do we mean by "personal information?"</h6>
+                    <p>We do not sell your personal information. For us, "personal information" means information which identifies you, like your name or email
+                      address.</p>
+                    <p>Any information that falls outside of this is "non-personal information."</p>
+                    <p>If we store your personal information with information that is non-personal, we will consider the
+                      combination as personal information. If we remove all personal information from a set of data then
+                      the
+                      remaining is non-personal information.</p>
+                    <h6>How do we learn information about you?</h6>
+                    <a name="learn_information"></a>
+                    <p>We learn information about you when:</p>
+                    <ul>
+                      <li>you give it to us directly (e.g., when you choose to send us crash reports);</li>
+                      <li>we collect it automatically through our products and services (e.g., when your browser checks
+                        with us to see if is up to date);</li>
+                      <li>someone else tells us information about you (e.g., when an app works with your email providers
+                        to set up your account); or</li>
+                      <li>when we try and understand more about you based on information you've given to us (e.g., when
+                        we use your IP address to customize language for some of our services).</li>
+                    </ul>
+                    <h6>What do we do with your information once we have it?</h6>
+                    <p>When you give us information, we will use it in the ways for which you've given us permission.
+                      Generally, we use your information to help us provide and improve our products and services for
+                      you.</p>
+                    <h6>When do we share your information with others?</h6>
+                    <a name="third_parties"></a>
+                    <ul>
+                      <li>When we have asked and received your permission to share it.</li>
+                      <li>For processing or providing products and services to you, but only if those entities receiving
+                        your information are contractually obligated to handle the data in ways that are approved by
+                        stead.</li>
+                      <li>When the law requires it. We follow the law whenever we receive requests about you from a
+                        government or related to a lawsuit. We'll notify you when we're asked to hand over your personal
+                        information in this way unless we're legally prohibited from doing so. When we receive requests
+                        like this, we'll only release your personal information if we have a good faith belief that the
+                        law requires us to do so. Nothing in this policy is intended to limit any legal defenses or
+                        objections that you may have to a third party's request to disclose your information.</li>
+                      <li>When we believe it is necessary to prevent harm to you or someone else. We will only share
+                        your information in this way if we have a good faith belief that it is reasonably necessary to
+                        protect the rights, property or safety of you, our other users, stead. or the public.</li>
+                      <li>If our organizational structure or status changes (if we undergo a restructuring, are
+                        acquired, or go bankrupt) we may pass your information to a successor or affiliate.</li>
+                    </ul>
+                    <h6>How do we store and protect your personal information?</h6>
+                    <a name='retention'></a>
+                    <p>We are committed to protecting your personal information once we have it. We implement physical,
+                      business and technical security measures. Despite our efforts, if we learn of a security breach,
+                      we'll notify you so that you can take appropriate protective steps.</p>
+                    <p>We also don't want your personal information for any longer than we need it, so we only keep it
+                      long enough to do what we collected it for. Once we don't need it, we take steps to destroy it
+                      unless we are required by law to keep it longer. If you would like it deleted, you may do so through the relevant service or <a href="contact.html">contact us</a></p>
+                    <h6>What else should you know?</h6>
+                    <p>We're a digital organization and our computers may be in several different places around the
+                      world. We also use service providers whose computers may also be in various countries. This means
+                      that your information might end up on one of those computers in another country, and that country
+                      may have a different level of data protection regulation than yours. By giving us information, you
+                      consent to this kind of transfer of your information. No matter what country your information is
+                      in, we comply with applicable law and will also abide by the commitments we make in this privacy
+                      policy.</p>
+                    <p>If you are under 13, we don't want your personal information, and you must not provide it to us.
+                      If you are a parent and believe that your child who is under 13 has provided us with personal
+                      information, please <a href="contact.html">contact us</a> to have your child's information
+                      removed.</p>
+                    <h6>Adjust Notification and Email Preferences</h6>
+                    <a name='notification'></a>
+                    <p>You can choose to stop receiving certain emails and notifications by indicating your preference
+                      within the service. You may also unsubscribe by following the instructions contained at the bottom
+                      of each email. Any administrative or service-related emails (to confirm a purchase, or an update
+                      to this Privacy Policy or our Terms of Service, etc.) generally do not offer an option to
+                      unsubscribe as they are necessary to provide the Services you requested.</p>
+                    <h6>What if we change this privacy policy or any of our privacy notices?</h6>
+                    <a name='privacy_policy_information'></a>
+                    <p>We may need to change this policy and our notices. The updates will be posted online. If the
+                      changes are substantive, we will announce the update through stead.'s usual channels for such
+                      announcements such as blog posts and forums. Your continued use of the product or service after
+                      the effective date of such changes constitutes your acceptance of such changes. To make your
+                      review more convenient, we will post an effective date at the top of the page.</p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
   <Footer />
 </BaseLayout>

@@ -4,18 +4,283 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Processes" description="Better processes with stead." ogUrl="https://stead.africa/processes">
+<BaseLayout
+  title="Digitise Processes"
+  description="stead. digital innovation"
+  ogUrl="https://stead.africa/processes.html"
+>
+  <Fragment slot="head">
+    <style is:inline>
+      #carousel1 {
+        background-image: url('/img/unsplash-CPyxxAB8B2M-unsplash.jpg');
+      }
+      #carousel2 {
+        background-image: url('/img/debby-hudson-asviIGR3CPE-unsplash.jpg');
+      }
+      #carousel3 {
+        background-image: url('/img/brooke-cagle-uWVWQ8gF8PE-unsplash.jpg');
+      }
+      #card1 {
+        background-image: url('/img/bg24.jpg');
+      }
+      #card2 {
+        background-image: url('/img/bg23.jpg');
+      }
+      #card3 {
+        background-image: url('/img/bg25.jpg');
+      }
+      #story1 {
+        background-image: url('/img/robby-mccullough-ZDkIMukupA4-unsplash.jpg');
+      }
+      #story1b {
+        background-image: url('/img/product-school-5H0p6JPUHbI-unsplash.jpg');
+      }
+      #story2 {
+        background-image: url('/img/carlos-muza-hpjSkU2UYSU-unsplash.jpg');
+      }
+      #story2b {
+        background-image: url('/img/helloquence-5fNmWej4tAA-unsplash.jpg');
+      }
+      #story3 {
+        background-image: url('/img/med-badr-chemmaoui-ZSPBhokqDMc-unsplash.jpg');
+      }
+      #story3b {
+        background-image: url('/img/william-iven-gcsNOsPEXfs-unsplash.jpg');
+      }
+    </style>
+  </Fragment>
+
   <Nav />
+
   <div class="wrapper">
-    <div class="page-header page-header-small">
-      <div class="page-header-image" style="background-image: url('/img/bg25.jpg');"></div>
-    </div>
     <div class="main">
-      <div class="container">
-        <h2 class="title">Processes</h2>
-        <p>Content coming soon...</p>
+      <div class="header-3">
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="page-header header-filter">
+                <div class="page-header-image" id="carousel1">
+                </div>
+                <div class="container text-left">
+                  <div class="content-center">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="iframe-container">
+                        </div>
+                      </div>
+                      <div class="col-md-6 ml-auto mr-auto text-right">
+                        <h1 class="title">How do we digitise our processes?</h1>
+                        <h4 class="description ">Imagine having an online design system for clients, freeing up your
+                          well-paid staff to be more creative instead of fielding basic client requests</h4>
+                        <div class="buttons">
+                          <a href="#repurpose" class="btn btn-neutral btn-primary mr-1">
+                            <i class="now-ui-icons files_single-copy-04"></i> Read More..
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="page-header header-filter">
+                <div class="page-header-image" id="carousel2"></div>
+                <div class="container">
+                  <div class="content-center">
+                    <div class="row">
+                      <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h1 class="title">How do we digitise our processes?</h1>
+                        <h4 class="description ">Imagine a dashboard which displays your organisations data on your
+                          phone, instead of going through many spreadsheets</h4>
+                        <br />
+                        <div class="buttons">
+                          <a href="#cost" class="btn btn-neutral btn-primary mr-1">
+                            <i class="now-ui-icons files_single-copy-04"></i> Read More..
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="page-header header-filter">
+                <div class="page-header-image" id="carousel3"></div>
+                <div class="container">
+                  <div class="content-center">
+                    <div class="row">
+                      <div class="col-md-6 text-left">
+                        <h1 class="title">How do we digitise our processes?</h1>
+                        <h4 class="description ">Imagine digital tools to manage your pipeline of leads to projects,
+                          automatically tracking time, cost and billing</h4>
+                        <br />
+                        <div class="buttons">
+                          <a href="#sales" class="btn btn-neutral btn-primary mr-1">
+                            <i class="now-ui-icons files_single-copy-04"></i> Read More..
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <i class="now-ui-icons arrows-1_minimal-left"></i>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <i class="now-ui-icons arrows-1_minimal-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="features-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 ml-auto mr-auto text-center">
+              <h2 class="title">Digitising processes allows your business to thrive</h2>
+              <h4 class="description">When business leaders talk about going digital, many are uncertain about what that
+                means beyond buying the latest IT system. Digital leaders stand out from their competitors in two ways:
+                how they put digital to work, especially in engaging with clients and suppliers, and how intensively
+                their employees use digital tools in every aspect of their daily activities.
+              </h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 same-height">
+              <div class="card card-background card-raised" data-background-color id="card1">
+                <div class="info">
+                  <div class="icon icon-white">
+                    <i class="now-ui-icons business_bulb-63"></i>
+                  </div>
+                  <div class="description">
+                    <h4 class="info-title">Increasing sales</h4>
+                    <p>Digitising your business can increase sales in two ways: by allowing you to spend more time on
+                      sales and less time on other non-value adding activities, or by attracting customers with
+                      innovations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 same-height">
+              <div class="card card-background card-raised" data-background-color id="card2">
+                <div class="info">
+                  <div class="icon icon-white">
+                    <i class="now-ui-icons business_badge"></i>
+                  </div>
+                  <div class="description">
+                    <h4 class="info-title">Saving costs</h4>
+                    <p>Whilst it costs businesses to implement digital systems, we ensure that these costs are offset by
+                      savings in the business. These savings usually come from better efficiency and better ways of
+                      managing processes and systems</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 same-height">
+              <div class="card card-background card-raised" data-background-color id="card3">
+                <div class="info">
+                  <div class="icon icon-white">
+                    <i class="now-ui-icons location_map-big"></i>
+                  </div>
+                  <div class="description">
+                    <h4 class="info-title">Repurposing resources</h4>
+                    <p>Implementing digital systems allows staff who were busy with administrative or menial tasks to
+                      refocus their skills onto value adding activities</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="projects-3" data-background-color="black">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 ml-auto mr-auto text-center">
+              <h6 class="category text-muted">Let's get practical</h6>
+              <h2 class="title">Some case studies to illustrate digital process design from stead.</h2>
+            </div>
+          </div>
+          <div class="section-story-overview">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="image-container image-left" id="story1">
+                  <p class="blockquote blockquote-primary">"An integrated customer and project workspace for tracking
+                    from the time someone gives you their business card to when they make their 1000th order"
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="image-container image-right" id="story1b">
+                  <a name="sales"></a>
+                </div>
+                <h6 class="category text-primary">Sales</h6>
+                <h4 class="card-title">Project pipelines</h4>
+                <p>Most industries can manage services they provide using a project approach. We can take this a step
+                  further by integrating a Customer Relations Management system, which allows you to track from when you
+                  first meet someone, to them becoming a key account. From purchase order to completion of project. From
+                  completion to the next project.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="section-story-overview">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="image-container image-left" id="story2">
+                  <p class="blockquote blockquote-primary">"An automatic dashboard which displays your organisations
+                    data on your phone, instead of going through spreadsheets"
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="image-container image-right" id="story2b">
+                  <a name="cost"></a>
+                </div>
+                <h6 class="category text-primary">Saving cost</h6>
+                <h4 class="card-title">Dashboard for your data</h4>
+                <p>We often think using spreadsheets for our data is being digital. And whilst it is, there is so much
+                  more we can do today. And so much more than doesn't require a person to spend days of each month
+                  gathering the data into this spreadsheet. We design systems that allow you to glance at dashboards on
+                  your phone, as quickly as the data is updated</p>
+              </div>
+            </div>
+          </div>
+          <div class="section-story-overview">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="image-container image-left" id="story3">
+                  <p class="blockquote blockquote-primary">"An online design system for clients, which allows people to
+                    see what they're designing immediately"
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="image-container image-right" id="story3b">
+                  <a name="repurpose"></a>
+                </div>
+                <h6 class="category text-primary">Reporpusing resources</h6>
+                <h4 class="card-title">Online design system</h4>
+                <p>Much of the time we use our well-paid resources to do quotes and other things that can now be done
+                  online. We design a system which allows customer to do their own quotes, and even some of their own
+                  design online. This allows your team to spend their time and talent on being creative and more
+                  value-adding work
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
   <Footer />
 </BaseLayout>

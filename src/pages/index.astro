@@ -3,6 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import ContactCard from '../components/ContactCard.astro';
+import { Image } from 'astro:assets';
+
+// Import inline images for optimization
+import ipadImg from '../assets/img/ipad3.png';
+import iphoneImg from '../assets/img/iphone1.png';
 ---
 
 <BaseLayout title="stead. Home" description="stead. digital innovation">
@@ -155,7 +160,7 @@ import ContactCard from '../components/ContactCard.astro';
             </div>
             <div class="col-md-6">
               <div class="image-container">
-                <img src="/img/ipad3.png" alt="iPad mockup" />
+                <Image src={ipadImg} alt="iPad mockup" format="webp" quality={85} style="max-width: 100%; height: auto;" />
               </div>
             </div>
           </div>
@@ -199,7 +204,7 @@ import ContactCard from '../components/ContactCard.astro';
             </div>
             <div class="col-md-4">
               <div class="phone-container">
-                <img src="/img/iphone1.png" alt="iPhone mockup" />
+                <Image src={iphoneImg} alt="iPhone mockup" format="webp" quality={85} style="max-width: 100%; height: auto;" />
               </div>
             </div>
             <div class="col-md-4">

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "pnpm compile:css && astro check && astro build",
+    "compile:css": "sass assets/scss/now-ui-kit.scss public/css/now-ui-kit.css && cp assets/css/stead.css public/css/stead.css",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -26,6 +27,7 @@
     "typescript": "^5.7.2"
   },
   "devDependencies": {
-    "sass": "^1.94.2"
+    "sass": "^1.94.2",
+    "sharp": "^0.34.5"
   }
 }

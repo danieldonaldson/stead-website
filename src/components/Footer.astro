@@ -1,3 +1,17 @@
+---
+import { Image } from 'astro:assets';
+
+// Import Instagram feed images
+import oliviaImg from '../assets/img/olivia.jpg';
+import jamesImg from '../assets/img/james.jpg';
+import michaelImg from '../assets/img/michael.jpg';
+import emilyImg from '../assets/img/emily.jpg';
+import marieImg from '../assets/img/marie.jpg';
+import usherImg from '../assets/img/usher.jpg';
+import mikeImg from '../assets/img/mike.jpg';
+import julieImg from '../assets/img/julie.jpg';
+---
+
 <footer class="footer footer-big footer-white">
   <div class="container">
     <div class="content">
@@ -27,14 +41,14 @@
         <div class="col-md-4">
           <h5>Instagram Feed</h5>
           <div class="gallery-feed">
-            <img src="/img/olivia.jpg" alt="Instagram" width="100" height="100" />
-            <img src="/img/james.jpg" alt="Instagram" width="100" height="100" />
-            <img src="/img/michael.jpg" alt="Instagram" width="100" height="100" />
-            <img src="/img/emily.jpg" alt="Instagram" width="100" height="100" />
-            <img src="/img/marie.jpg" alt="Instagram" width="100" height="100" />
-            <img src="/img/usher.jpg" alt="Instagram" width="100" height="100" />
-            <img src="/img/mike.jpg" alt="Instagram" width="100" height="100" />
-            <img src="/img/julie.jpg" alt="Instagram" width="100" height="100" />
+            <Image src={oliviaImg} alt="Instagram" width={100} height={100} format="webp" quality={80} />
+            <Image src={jamesImg} alt="Instagram" width={100} height={100} format="webp" quality={80} />
+            <Image src={michaelImg} alt="Instagram" width={100} height={100} format="webp" quality={80} />
+            <Image src={emilyImg} alt="Instagram" width={100} height={100} format="webp" quality={80} />
+            <Image src={marieImg} alt="Instagram" width={100} height={100} format="webp" quality={80} />
+            <Image src={usherImg} alt="Instagram" width={100} height={100} format="webp" quality={80} />
+            <Image src={mikeImg} alt="Instagram" width={100} height={100} format="webp" quality={80} />
+            <Image src={julieImg} alt="Instagram" width={100} height={100} format="webp" quality={80} />
           </div>
         </div>
       </div>
@@ -45,36 +59,5 @@
         © <span id="current-year"></span> stead. All rights reserved
       </span>
     </div>
-  </div>
-  <div style="width: 100%; background-color: white; padding: 10px 0px 10px 0px; text-align: center; box-sizing: border-box;">
-    <a style="display: flex; justify-content: center; flex-wrap: wrap; width:100%; text-decoration:none; text-align:center;"
-      href="https://sacoronavirus.co.za/">
-      <div class="main-corona-banner" style="display: inline-block; background-color: white; flex-grow: 2;">
-        <img style="width: 294px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/main.png"
-          alt="South African Government COVID-19 Portal" />
-      </div>
-      <div style="display: flex; flex-grow: 4; justify-content: center; flex-wrap: wrap;">
-        <div style="display: flex; flex-grow: 1; justify-content: space-around; flex-wrap: wrap;">
-          <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
-            <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/tested.png"
-              alt="South Africa COVID-19 Tested Numbers" />
-          </div>
-          <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
-            <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/positive.png"
-              alt="South Africa COVID-19 Positive Cases" />
-          </div>
-        </div>
-        <div style="display: flex; flex-grow: 1; justify-content: space-around; flex-wrap: wrap;">
-          <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
-            <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/cured.png"
-              alt="South Africa COVID-19 Recovered Numbers" />
-          </div>
-          <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
-            <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/deaths.png"
-              alt="South Africa COVID-19 Death Numbers" />
-          </div>
-        </div>
-      </div>
-    </a>
   </div>
 </footer>
