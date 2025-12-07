@@ -287,8 +287,8 @@ import iphoneImg from '../assets/img/iphone1.png';
       if (messageUsForm) {
         messageUsForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          grecaptcha.ready(function() {
-            grecaptcha.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
+          grecaptcha.enterprise.ready(function() {
+            grecaptcha.enterprise.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
               action: 'contactUs'
             }).then(function(token) {
               const formData = new URLSearchParams();
@@ -326,8 +326,8 @@ import iphoneImg from '../assets/img/iphone1.png';
       if (findOutForm) {
         findOutForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          grecaptcha.ready(function() {
-            grecaptcha.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
+          grecaptcha.enterprise.ready(function() {
+            grecaptcha.enterprise.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
               action: 'findOut'
             }).then(function(token) {
               const formData = new URLSearchParams();

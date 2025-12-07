@@ -45,8 +45,8 @@ import ContactCard from '../components/ContactCard.astro';
       if (messageUsForm) {
         messageUsForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          grecaptcha.ready(function() {
-            grecaptcha.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
+          grecaptcha.enterprise.ready(function() {
+            grecaptcha.enterprise.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
               action: 'contactUs'
             }).then(function(token) {
               const formData = new URLSearchParams();
