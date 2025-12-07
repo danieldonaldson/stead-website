@@ -289,7 +289,7 @@ import iphoneImg from '../assets/img/iphone1.png';
           action: 'contactUs'
         }).then(function (token) {
           $.ajax({
-            url: 'api/v0/captcha',
+            url: 'https://captcha.stead.africa/captcha',
             type: 'POST',
             data: {
               site: 'stead_africa',
@@ -321,7 +321,7 @@ import iphoneImg from '../assets/img/iphone1.png';
           action: 'findOut'
         }).then(function (token) {
           $.ajax({
-            url: 'api/v0/captcha',
+            url: 'https://captcha.stead.africa/captcha',
             type: 'POST',
             data: {
               site: 'stead_africa',
