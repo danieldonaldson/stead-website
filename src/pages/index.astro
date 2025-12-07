@@ -282,66 +282,82 @@ import iphoneImg from '../assets/img/iphone1.png';
   <Footer />
 
   <script is:inline>
-    $("#messageUs").submit(function (e) {
-      e.preventDefault();
-      grecaptcha.ready(function () {
-        grecaptcha.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
-          action: 'contactUs'
-        }).then(function (token) {
-          $.ajax({
-            url: 'https://captcha.stead.africa/captcha',
-            type: 'POST',
-            data: {
-              site: 'stead_africa',
-              Name: $('#contactName').val(),
-              Email: $('#contactEmail').val(),
-              Number: $('#contactNumber').val(),
-              Message: $('#message').val(),
-              'g-recaptcha-response': token
-            },
-            success: function (msg) {
-              $("#successmsg").html(
-                "<p>Thanks for your request! We will be in contact soon</p>"
-              );
-            },
-            error: function (msg) {
-              $("#findoutdone").html(
-                "<p>Something seems to have gone wrong :( Please reload the page and try again</p>"
-              );
-            }
-          });
-        });
-      });
-    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const messageUsForm = document.getElementById('messageUs');
+      if (messageUsForm) {
+        messageUsForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          grecaptcha.ready(function() {
+            grecaptcha.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
+              action: 'contactUs'
+            }).then(function(token) {
+              const formData = new URLSearchParams();
+              formData.append('site', 'stead_africa');
+              formData.append('Name', document.getElementById('contactName').value);
+              formData.append('Email', document.getElementById('contactEmail').value);
+              formData.append('Number', document.getElementById('contactNumber').value);
+              formData.append('Message', document.getElementById('message').value);
+              formData.append('g-recaptcha-response', token);
 
-    $("#find-out").submit(function (e) {
-      e.preventDefault();
-      grecaptcha.ready(function () {
-        grecaptcha.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
-          action: 'findOut'
-        }).then(function (token) {
-          $.ajax({
-            url: 'https://captcha.stead.africa/captcha',
-            type: 'POST',
-            data: {
-              site: 'stead_africa',
-              Email: $('#findoutemail').val(),
-              Page: "Find out button clicked",
-              'g-recaptcha-response': token
-            },
-            success: function (msg) {
-              $("#findoutdone").html(
-                "<p>Thanks! We will be in contact within 2 business days!</p>"
-              );
-            },
-            error: function (msg) {
-              $("#findoutdone").html(
-                "<p>Something seems to have gone wrong :( Please reload the page and try again</p>"
-              );
-            }
+              fetch('https://captcha.stead.africa/captcha', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formData
+              })
+              .then(response => {
+                const successMsg = document.getElementById('successmsg');
+                if (response.ok) {
+                  successMsg.innerHTML = '<p>Thanks for your request! We will be in contact soon</p>';
+                } else {
+                  successMsg.innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
+                }
+              })
+              .catch(error => {
+                document.getElementById('successmsg').innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
+              });
+            });
           });
         });
-      });
+      }
+
+      const findOutForm = document.getElementById('find-out');
+      if (findOutForm) {
+        findOutForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          grecaptcha.ready(function() {
+            grecaptcha.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
+              action: 'findOut'
+            }).then(function(token) {
+              const formData = new URLSearchParams();
+              formData.append('site', 'stead_africa');
+              formData.append('Email', document.getElementById('findoutemail').value);
+              formData.append('Page', 'Find out button clicked');
+              formData.append('g-recaptcha-response', token);
+
+              fetch('https://captcha.stead.africa/captcha', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formData
+              })
+              .then(response => {
+                const findoutDone = document.getElementById('findoutdone');
+                if (response.ok) {
+                  findoutDone.innerHTML = '<p>Thanks! We will be in contact within 2 business days!</p>';
+                } else {
+                  findoutDone.innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
+                }
+              })
+              .catch(error => {
+                document.getElementById('findoutdone').innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
+              });
+            });
+          });
+        });
+      }
     });
   </script>
 </BaseLayout>

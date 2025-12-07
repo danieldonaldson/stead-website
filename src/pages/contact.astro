@@ -40,32 +40,45 @@ import ContactCard from '../components/ContactCard.astro';
   <Footer />
 
   <script is:inline>
-    $("#messageUs").submit(function (e) {
-      e.preventDefault();
-      grecaptcha.ready(function () {
-        grecaptcha.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
-          action: 'contactUs'
-        }).then(function (token) {
-          $.ajax({
-            url: 'https://captcha.stead.africa/captcha',
-            type: 'POST',
-            data: {
-              site: 'stead_africa',
-              Name: $('#contactName').val(),
-              Email: $('#contactEmail').val(),
-              Number: $('#contactNumber').val(),
-              Message: $('#message').val(),
-              'g-recaptcha-response': token
-            },
-            success: function (msg) {
-              $("#successmsg").html("<p>Thanks for your request! We will be in contact soon</p>");
-            },
-            error: function (msg) {
-              $("#successmsg").html("<p>Something seems to have gone wrong :( Please reload the page and try again</p>");
-            }
+    document.addEventListener('DOMContentLoaded', function() {
+      const messageUsForm = document.getElementById('messageUs');
+      if (messageUsForm) {
+        messageUsForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          grecaptcha.ready(function() {
+            grecaptcha.execute('6LdXmrsnAAAAAFiOD0zoXJ-owoUhc5xhSvQK_C_4', {
+              action: 'contactUs'
+            }).then(function(token) {
+              const formData = new URLSearchParams();
+              formData.append('site', 'stead_africa');
+              formData.append('Name', document.getElementById('contactName').value);
+              formData.append('Email', document.getElementById('contactEmail').value);
+              formData.append('Number', document.getElementById('contactNumber').value);
+              formData.append('Message', document.getElementById('message').value);
+              formData.append('g-recaptcha-response', token);
+
+              fetch('https://captcha.stead.africa/captcha', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formData
+              })
+              .then(response => {
+                const successMsg = document.getElementById('successmsg');
+                if (response.ok) {
+                  successMsg.innerHTML = '<p>Thanks for your request! We will be in contact soon</p>';
+                } else {
+                  successMsg.innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
+                }
+              })
+              .catch(error => {
+                document.getElementById('successmsg').innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
+              });
+            });
           });
         });
-      });
+      }
     });
   </script>
 </BaseLayout>
