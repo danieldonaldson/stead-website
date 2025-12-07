@@ -47,7 +47,7 @@ import ContactCard from '../components/ContactCard.astro';
           action: 'contactUs'
         }).then(function (token) {
           $.ajax({
-            url: 'api/v0/captcha',
+            url: 'https://captcha.stead.africa/captcha',
             type: 'POST',
             data: {
               site: 'stead_africa',
