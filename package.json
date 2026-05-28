@@ -15,6 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/danieldonaldson/Silience-Website.git"
   },
+  "packageManager": "pnpm@11.4.0",
   "author": "",
   "license": "ISC",
   "bugs": {
