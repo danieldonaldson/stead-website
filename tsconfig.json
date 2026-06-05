@@ -4,5 +4,5 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
-  "exclude": ["vitest.config.ts"]
+  "exclude": ["vitest.config.ts", "assets/js/**", "public/js/**", "dist/**"]
 }
