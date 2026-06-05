@@ -9,7 +9,8 @@
     "build": "pnpm compile:css && astro check && astro build",
     "compile:css": "sass assets/scss/now-ui-kit.scss public/css/now-ui-kit.css && cp assets/css/stead.css public/css/stead.css",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest run"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "sass": "^1.100.0",
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "vitest": "^4.1.8"
   }
 }
