@@ -15,13 +15,3 @@ services:
     environment:
       - NODE_ENV=development
     command: pnpm dev --host 0.0.0.0
-
-  # Production build (for testing locally)
-  prod:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:80"
-    environment:
-      - NODE_ENV=production

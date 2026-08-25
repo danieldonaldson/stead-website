@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stead-website",
+  "compatibility_date": "2026-08-01",
+  // Custom Domains: Cloudflare owns these DNS records and points them at this
+  // Worker. No origin server is referenced any more.
+  "routes": [
+    { "pattern": "stead.africa", "custom_domain": true },
+    { "pattern": "www.stead.africa", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./dist",
+    // Serves /excellence directly from dist/excellence/index.html with no
+    // redirect, matching the slash-less internal links and the old nginx.
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
