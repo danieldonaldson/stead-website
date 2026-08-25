@@ -314,7 +314,7 @@ import iphoneImg from '../assets/img/iphone1.png';
                   successMsg.innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
                 }
               })
-              .catch(error => {
+              .catch(_ => {
                 document.getElementById('successmsg').innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
               });
             });
@@ -351,7 +351,7 @@ import iphoneImg from '../assets/img/iphone1.png';
                   findoutDone.innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
                 }
               })
-              .catch(error => {
+              .catch(_ => {
                 document.getElementById('findoutdone').innerHTML = '<p>Something seems to have gone wrong :( Please reload the page and try again</p>';
               });
             });
