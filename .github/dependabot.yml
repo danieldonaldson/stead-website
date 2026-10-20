@@ -9,6 +9,10 @@ updates:
       npm-dependencies:
         patterns:
           - "*"
+    ignore:
+      # astro check doesn't support TypeScript 7 yet; revisit when @astrojs/check does.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "docker"
     directory: "/"
