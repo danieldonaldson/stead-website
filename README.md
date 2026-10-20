@@ -101,7 +101,7 @@ Typical savings:
 
 ### Delivery Optimization
 - **Compression**: Cloudflare compresses text assets automatically
-- **Browser caching**: HTML is served `no-store` (see `public/_headers`) so updates show up immediately
+- **Browser caching**: HTML is served `no-store` so updates show up immediately, and Astro's content-hashed `/_astro/` files are cached as immutable for a year (see `public/_headers`)
 - **CDN-ready**: Static build output works with any CDN
 
 ## Scripts
