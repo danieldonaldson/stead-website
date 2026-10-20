@@ -1,12 +1,11 @@
 # stead. Website
 
-A modern website built with [Astro](https://astro.build), designed for deployment with Docker and Dokploy.
+A modern website built with [Astro](https://astro.build), served from Cloudflare Workers.
 
 ## Prerequisites
 
-- Node.js 20+
+- Node.js 22 (pinned in `.node-version`; sharp has no prebuilt binary for newer releases)
 - pnpm
-- Docker (for containerized builds)
 
 ## Local Development
 
@@ -48,41 +47,10 @@ This will:
 pnpm preview
 ```
 
-## Docker Development
+## Deployment
 
-### Development with Docker
-
-```bash
-docker-compose up dev
-```
-
-Access at `http://localhost:4321`
-
-### Production build with Docker
-
-```bash
-docker-compose up prod
-```
-
-Access at `http://localhost:8080`
-
-Or build and run manually:
-
-```bash
-docker build -t stead-website .
-docker run -p 8080:80 stead-website
-```
-
-## Deployment with Dokploy
-
-The `Dockerfile` is configured for deployment with Dokploy:
-
-1. **Development/Preview**: Deploys use the dev Dockerfile for faster iterations
-2. **Production**: Uses multi-stage build with nginx for optimal performance
-
-### Build stages:
-- **Builder**: Compiles SCSS, installs dependencies, and builds the Astro site
-- **Production**: Serves static files with nginx
+The site is served from Cloudflare Workers as static assets. `wrangler.jsonc` points the Worker at the
+`dist/` build output and binds the `stead.africa` and `www.stead.africa` custom domains.
 
 ## Project Structure
 
@@ -101,10 +69,7 @@ The `Dockerfile` is configured for deployment with Dokploy:
 ├── assets/            # Source assets
 │   ├── scss/          # SCSS source files
 │   └── css/           # Source CSS files
-├── Dockerfile         # Production Docker image
-├── Dockerfile.dev     # Development Docker image
-├── docker-compose.yml # Docker Compose configuration
-└── nginx.conf         # Nginx configuration for production
+└── wrangler.jsonc     # Cloudflare Workers configuration
 ```
 
 ## Configuration
@@ -112,8 +77,8 @@ The `Dockerfile` is configured for deployment with Dokploy:
 ### Astro Configuration
 Edit `astro.config.mjs` to modify Astro settings.
 
-### Nginx Configuration
-Edit `nginx.conf` to customize the production web server settings (caching, gzip, security headers, etc.).
+### Security Headers
+Edit `public/_headers` to change the response headers Cloudflare adds to the site.
 
 ## Performance Optimizations
 
@@ -135,8 +100,8 @@ Typical savings:
 - **Minification**: All CSS is minified in production builds
 
 ### Delivery Optimization
-- **Gzip compression**: All text assets are gzipped (configured in nginx.conf)
-- **Browser caching**: Static assets have long cache times
+- **Compression**: Cloudflare compresses text assets automatically
+- **Browser caching**: HTML is served `no-store` (see `public/_headers`) so updates show up immediately
 - **CDN-ready**: Static build output works with any CDN
 
 ## Scripts
